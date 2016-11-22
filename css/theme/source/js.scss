@@ -1,0 +1,63 @@
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans:400,700&amp;subset=cyrillic);
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'PT Sans', sans-serif;
+$mainColor: #000;
+$headingFont: 'PT Sans Caption', sans-serif;
+$headingColor: #000;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #f7df1e;
+$linkColor: #00008B;
+$linkColorHover: lighten($linkColor, 20%);
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+ul.columns {
+  columns: 2;
+  li {
+    display: block;
+  }
+}
+
+.fragment {
+  &.will-hidden {
+    display: inline-block;
+  }
+
+  &.will-hidden, &.will-bold {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  &.will-hidden.visible {
+    width: 0;
+    overflow: hidden;
+  }
+
+  &.will-bold.visible {
+    font-weight: 700;
+  }
+
+  &.will-show {
+    width: 0;
+    display: inline-block;
+    &:not(.visible) {
+      overflow: hidden;
+    }
+  }
+  &.will-show.visible {
+    width: auto;
+  }
+
+  &.fragment.strike.visible {
+    color: rgba(0, 0, 0, .3)
+  }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
