@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>JavaScript Reflection, що далі?</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/js.css">
@@ -24,19 +24,28 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section>
+        <section data-background-image="lib/bg.jpg" data-background-color="#20608a">
             <h1>
                 JavaScript Reflection<br>
                 <small>що далі?</small>
             </h1>
         </section>
-        <section>
-            <h2>Про мене</h2>
+        <section data-background-color="#fff">
+            <img class="me" src="lib/me.jpg" alt="">
+
+            <div class="about">
+                <h2>Про мене</h2>
+                @kostyandrew
+
+                <p>Full-stack розробник в ASD</p>
+                <p>Ментор NodeSchool Чернівці</p>
+            </div>
         </section>
 
         <section>
             <h2>
-                ES 201<span class="fragment will-hidden" data-fragment-index="1">5</span><span class="fragment will-show" data-fragment-index="1">7</span>
+                ES 201<span class="fragment will-hidden" data-fragment-index="1">5</span><span
+                    class="fragment will-show" data-fragment-index="1">7</span>
                 Reflect API
             </h2>
 
@@ -100,6 +109,38 @@
 
             <section>
                 <h3>Параметри функції</h3>
+                <pre><code data-trim data-noescape>
+public class Main {
+
+    public static void main(String[] args) {
+
+        Class mainClass = Main.class;
+
+        Method[] methods = mainClass.getDeclaredMethods();
+
+        for (Method method : methods) {
+            System.out.println(method.getName());
+
+            Parameter[] parameters = method.getParameters();
+            for (Parameter parameter : parameters) {
+                System.out.println("\t" + parameter.getType().getTypeName() + " : " + parameter.getName());
+            }
+        }
+    }
+
+    public void doSomething(int a, int b, String c) {
+    }
+}
+                </code></pre>
+
+                <pre><code data-trim data-noescape>
+main
+	java.lang.String[] : args
+doSomething
+	int : a
+	int : b
+	java.lang.String : c
+                </code></pre>
             </section>
 
             <section>
@@ -113,7 +154,7 @@
                 <pre><code data-trim data-noescape>
 class UserController {
     // vk.com/id%user%
-    public void profile(User user, Filesystem fs) { /* ... */ }
+    public void profile(User user, FileStorage fs) { /* ... */ }
 }
                 </code></pre>
             </section>
@@ -183,9 +224,9 @@ function stringifyFn(fn) {
         <section>
             <h2>Підсумок</h2>
             <ul>
-                <li>У JavaScript не реалізовано Reflection</li>
                 <li>Об'єкт Reflect створений для взаємодії з об'єктами в допомогу Proxy</li>
-                <li>ES 2015 Classes передбачають подальший розвиток</li>
+                <li>Відсутні адекватні методи аналізу функцій та класів</li>
+                <li>ES 2015 передбачає подальший розвиток</li>
             </ul>
         </section>
     </div>

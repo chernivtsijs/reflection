@@ -1,35 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans:400,700&amp;subset=cyrillic);
-ul.columns {
-  columns: 2; }
-  ul.columns li {
-    display: block; }
-
-.fragment.will-hidden {
-  display: inline-block; }
-
-.fragment.will-hidden, .fragment.will-bold {
-  opacity: 1 !important;
-  visibility: visible !important; }
-
-.fragment.will-hidden.visible {
-  width: 0;
-  overflow: hidden; }
-
-.fragment.will-bold.visible {
-  font-weight: 700; }
-
-.fragment.will-show {
-  width: 0;
-  display: inline-block; }
-  .fragment.will-show:not(.visible) {
-    overflow: hidden; }
-
-.fragment.will-show.visible {
-  width: auto; }
-
-.fragment.fragment.strike.visible {
-  color: rgba(0, 0, 0, 0.3); }
-
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -228,20 +197,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #00008B;
+  color: #7b0046;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #0000f1;
+  color: #e10080;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #00003f; }
+  background: #2f001a; }
 
 /*********************************************
  * IMAGES
@@ -263,7 +232,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #00008B;
+  border-color: #7b0046;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -271,31 +240,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #00008B; }
+  border-right-color: #7b0046; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #00008B; }
+  border-left-color: #7b0046; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #00008B; }
+  border-bottom-color: #7b0046; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #00008B; }
+  border-top-color: #7b0046; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #0000f1; }
+  border-right-color: #e10080; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #0000f1; }
+  border-left-color: #e10080; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #0000f1; }
+  border-bottom-color: #e10080; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #0000f1; }
+  border-top-color: #e10080; }
 
 /*********************************************
  * PROGRESS BAR
@@ -304,7 +273,56 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #00008B;
+  background: #7b0046;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+.reveal h1 {
+  color: white;
+  text-shadow: 0 0 10px black; }
+
+.reveal img.me {
+  height: 250px;
+  width: 250px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  float: left;
+  border-radius: 50%;
+  border: 5px solid #7b0046;
+  object-fit: cover; }
+
+.reveal .about {
+  text-align: left;
+  padding-left: 40px;
+  overflow: hidden; }
+
+ul.columns {
+  columns: 2; }
+  ul.columns li {
+    display: block; }
+
+.fragment.will-hidden {
+  display: inline-block; }
+
+.fragment.will-hidden, .fragment.will-bold {
+  opacity: 1 !important;
+  visibility: visible !important; }
+
+.fragment.will-hidden.visible {
+  width: 0;
+  overflow: hidden; }
+
+.fragment.will-bold.visible {
+  font-weight: 700; }
+
+.fragment.will-show {
+  width: 0;
+  display: inline-block; }
+  .fragment.will-show:not(.visible) {
+    overflow: hidden; }
+
+.fragment.will-show.visible {
+  width: auto; }
+
+.fragment.fragment.strike.visible {
+  color: rgba(0, 0, 0, 0.3); }
