@@ -111,25 +111,21 @@
                 <h3>Параметри функції</h3>
                 <pre><code data-trim data-noescape>
 public class Main {
-
     public static void main(String[] args) {
-
         Class mainClass = Main.class;
-
         Method[] methods = mainClass.getDeclaredMethods();
-
         for (Method method : methods) {
             System.out.println(method.getName());
-
             Parameter[] parameters = method.getParameters();
             for (Parameter parameter : parameters) {
-                System.out.println("\t" + parameter.getType().getTypeName() + " : " + parameter.getName());
+                System.out.println("\t" +
+                    parameter.getType().getTypeName() + " : " +
+                    parameter.getName());
             }
         }
     }
-
-    public void doSomething(int a, int b, String c) {
-    }
+    public void doSomething(String c) {}
+    public void doSomething(int a, int b) {}
 }
                 </code></pre>
 
@@ -137,9 +133,10 @@ public class Main {
 main
 	java.lang.String[] : args
 doSomething
+	java.lang.String : c
+doSomething
 	int : a
 	int : b
-	java.lang.String : c
                 </code></pre>
             </section>
 
@@ -179,6 +176,8 @@ let a = function(userService, $scope) { /* ... */ };
 
 a.toString(); // 'function(userService, $scope) { /* ... */ }'
                 </code></pre>
+
+                <img src="lib/toString.jpg" alt="">
             </section>
             <section>
                 <h2>Як я намагався хакнути Angular Dependency Injection</h2>
